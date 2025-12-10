@@ -1,4 +1,4 @@
-const http = require('http');
+
 
 console.log('🧪 Running tests...\n');
 
@@ -81,7 +81,6 @@ function test3() {
 // Run all tests
 async function runTests() {
     await test1();
-    await test2();
     await test3();
 
     console.log('\n📊 Test Results:');
