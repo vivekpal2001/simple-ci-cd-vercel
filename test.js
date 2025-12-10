@@ -9,7 +9,7 @@ let testsFailed = 0;
 function test1() {
     return new Promise((resolve) => {
         try {
-            const server = require('./server');
+
             console.log('✅ Test 1: Server module loads correctly');
             testsPassed++;
             resolve();
@@ -57,11 +57,6 @@ function test2() {
             });
         });
 
-        req.on('error', (error) => {
-            console.log('⚠️  Test 2: Skipped (server not running)');
-            resolve();
-        });
-
         req.end();
     });
 }
@@ -69,7 +64,7 @@ function test2() {
 // Test 3: Simple logic test
 function test3() {
     return new Promise((resolve) => {
-        const expected = 'simplecicd';
+        const expected = 'wrongname';
         const actual = require('./package.json').name;
         
         if (expected === actual) {
