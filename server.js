@@ -9,7 +9,8 @@ const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
+const unusedVariable = 'test'
+console.log("hello")
     // Handle routes
     if (req.url === '/' || req.url === '/index.html') {
         fs.readFile(path.join(__dirname, 'public', 'index.html'), (err, data) => {
