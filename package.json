@@ -1,0 +1,24 @@
+{
+  "name": "simplecicd",
+  "version": "1.0.0",
+  "description": "Simple CI/CD demo project with Node.js server",
+  "license": "ISC",
+  "author": "vivek",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test.js",
+    "lint": "echo 'Running linter...' && node -c server.js && node -c test.js",
+    "build": "echo 'Build completed successfully'"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "keywords": [
+    "cicd",
+    "nodejs",
+    "demo"
+  ]
+}
