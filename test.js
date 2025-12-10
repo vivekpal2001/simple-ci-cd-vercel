@@ -64,7 +64,7 @@ function test1() {
 // Test 3: Simple logic test
 function test3() {
     return new Promise((resolve) => {
-        const expected = 'wrongname';
+        const expected = 'simplecicd';
         const actual = require('./package.json').name;
         
         if (expected === actual) {
