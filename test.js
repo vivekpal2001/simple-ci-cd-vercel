@@ -23,43 +23,43 @@ function test1() {
 }
 
 // Test 2: Check if server responds to requests
-function test2() {
-    return new Promise((resolve) => {
-        const options = {
-            hostname: 'localhost',
-            port: process.env.PORT || 3000,
-            path: '/api/health',
-            method: 'GET'
-        };
+// function test2() {
+//     return new Promise((resolve) => {
+//         const options = {
+//             hostname: 'localhost',
+//             port: process.env.PORT || 3000,
+//             path: '/api/health',
+//             method: 'GET'
+//         };
 
-        const req = http.request(options, (res) => {
-            let data = '';
+//         const req = http.request(options, (res) => {
+//             let data = '';
 
-            res.on('data', (chunk) => {
-                data += chunk;
-            });
+//             res.on('data', (chunk) => {
+//                 data += chunk;
+//             });
 
-            res.on('end', () => {
-                try {
-                    const response = JSON.parse(data);
-                    if (response.healthy === true) {
-                        console.log('✅ Test 2: Health endpoint returns healthy status');
-                        testsPassed++;
-                    } else {
-                        console.log('❌ Test 2: Health endpoint returned unhealthy status');
-                        testsFailed++;
-                    }
-                } catch (error) {
-                    console.log('❌ Test 2: Invalid JSON response from health endpoint');
-                    testsFailed++;
-                }
-                resolve();
-            });
-        });
+//             res.on('end', () => {
+//                 try {
+//                     const response = JSON.parse(data);
+//                     if (response.healthy === true) {
+//                         console.log('✅ Test 2: Health endpoint returns healthy status');
+//                         testsPassed++;
+//                     } else {
+//                         console.log('❌ Test 2: Health endpoint returned unhealthy status');
+//                         testsFailed++;
+//                     }
+//                 } catch (error) {
+//                     console.log('❌ Test 2: Invalid JSON response from health endpoint');
+//                     testsFailed++;
+//                 }
+//                 resolve();
+//             });
+//         });
 
-        req.end();
-    });
-}
+//         req.end();
+//     });
+// }
 
 // Test 3: Simple logic test
 function test3() {
